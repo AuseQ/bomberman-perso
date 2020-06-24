@@ -1,0 +1,34 @@
+body{
+  background-color: grey;
+}
+
+
+#plateau{
+  width: 680px;
+  height:680px;
+  background-color: white;
+  margin: auto;
+  border-style: solid;
+  position: relative;
+}
+#pion{
+  width: 38px;
+  height: 38px;
+  background-color: blue;
+  border-style: double;
+  border-color: grey;
+  position: absolute;
+  border-width: 1px;
+}
+#murs{
+position: relative;
+}
+.mur{
+  background-color: green;
+  width: 40px;
+  height: 40px;
+  margin-left: 40px;
+  margin-top: 40px;
+  position: absolute;
+
+}
