@@ -30,5 +30,10 @@ position: relative;
   margin-left: 40px;
   margin-top: 40px;
   position: absolute;
-
+}
+.murC{
+  background-color: #d32044;
+  width: 40px;
+  height: 40px;
+  position: absolute;
 }
