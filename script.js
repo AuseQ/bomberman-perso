@@ -1,11 +1,28 @@
+var bombe = document.getElementById("bombe");
+var plateau = document.getElementById("plateau");
 var pion = document.getElementById('pion'),
   stylePion = pion.style,
   x = pion.offsetLeft,
   y = pion.offsetTop;
-
 function random80() {
   return Math.floor(Math.random() * 80);
 }
+
+function dropDaBomb(x, y) {
+  var bombegen = document.createElement("div");
+      bombegen.setAttribute("id", "bombe");
+      plateau.appendChild(bombegen);
+      bstyle = bombegen.style;
+      bstyle.display = "block";
+      bstyle.top = y + "px";
+      bstyle.left = x + "px";
+      setTimeout(boom, 3000);
+}
+function boom() {
+  bstyle.display = "none";
+
+}
+
 
 for (var i = 0; i < random80() + 20; i++) {
   var divgen = document.createElement("div");
@@ -37,6 +54,9 @@ document.onkeydown = function(event) {
     case 37:
       x -= 40;
       break;
+    case 32:
+    dropDaBomb(x , y);
+      break;
     default:
       return;
   }
@@ -57,8 +77,9 @@ document.onkeydown = function(event) {
       } else if (keyCode == 37) {
         x += 40;
       }
-    }
-  }
+        }
+      }
+
 
   stylePion.left = String(x) + 'px';
   stylePion.top = String(y) + 'px';
