@@ -30,6 +30,8 @@ var mobcss = mobgen.style,
     my1 = mobgen.offsetTop;
     mx1 = Math.floor(Math.floor(Math.random() * 16) * 40);
     my1 = Math.floor(Math.floor(Math.random() * 16) * 40);
+    mobcss.left = String(mx1) + 'px';
+    mobcss.top = String(my1) + 'px';
 
 //mob2
 var mobgen2 = document.createElement("div");
@@ -38,6 +40,8 @@ var mobgen2 = document.createElement("div");
 var mobcss2 = mobgen2.style,
     mx2 = Math.floor(Math.floor(Math.random() * 16) * 40);
     my2 = Math.floor(Math.floor(Math.random() * 16) * 40);
+    mobcss2.left = String(mx2) + 'px';
+    mobcss2.top = String(my2) + 'px';
 
 //mob3
 var mobgen3 = document.createElement("div");
@@ -46,6 +50,8 @@ var mobgen3 = document.createElement("div");
 var mobcss3 = mobgen3.style,
     mx3 = Math.floor(Math.floor(Math.random() * 16) * 40);
     my3 = Math.floor(Math.floor(Math.random() * 16) * 40);
+    mobcss3.left = String(mx3) + 'px';
+    mobcss3.top = String(my3) + 'px';
 
 //mob4
 var mobgen4 = document.createElement("div");
@@ -54,6 +60,8 @@ var mobgen4 = document.createElement("div");
 var mobcss4 = mobgen4.style,
     mx4 = Math.floor(Math.floor(Math.random() * 16) * 40);
     my4 = Math.floor(Math.floor(Math.random() * 16) * 40);
+    mobcss4.left = String(mx4) + 'px';
+    mobcss4.top = String(my4) + 'px';
 
 //mob5
 var mobgen5 = document.createElement("div");
@@ -62,6 +70,8 @@ var mobgen5 = document.createElement("div");
 var mobcss5 = mobgen5.style;
     mx5 = Math.floor(Math.floor(Math.random() * 16) * 40);
     my5 = Math.floor(Math.floor(Math.random() * 16) * 40);
+    mobcss5.left = String(mx5) + 'px';
+    mobcss5.top = String(my5) + 'px';
 
 // en travaux
 function dropDaBomb(x, y) {
@@ -73,6 +83,9 @@ function dropDaBomb(x, y) {
       bstyle.top = y + "px";
       bstyle.left = x + "px";
       setTimeout(boom, 1000);
+      if (true) {
+
+      }
 
 }
 function boom(x,y) {
@@ -97,95 +110,75 @@ var colliMur = document.querySelectorAll(".mur");
 //move aleatoire mob 1
 function mob1Mov(){
 if (rng1 == 1) {
-  // mobcss.left = String(mx1 -= 40) + 'px';
   mx1 -= 40;
 }
 if (rng1 == 2){
-  // mobcss.left = String(mx1 += 40) + 'px';
   mx1 += 40;
 }
 if (rng1 == 3){
-  // mobcss.top = String(my1 -= 40) + 'px';
   my1 -= 40;
 }
 if (rng1 == 4){
-  // mobcss.top = String(my1 += 40) + 'px';
   my1 += 40;
 }
 }
 //move aleatoire mob 2
 function mob2Mov(){
 if (rng2 == 1) {
-  // mobcss2.left = String(mx2 -= 40) + 'px';
   mx2 -= 40;
 }
 if (rng2 == 2){
-  // mobcss2.left = String(mx2 += 40) + 'px';
   mx2 += 40;
 }
 if (rng2 == 3){
-  // mobcss2.top = String(my2 -= 40) + 'px';
   my2 -= 40;
 }
 if (rng2 == 4){
-  // mobcss2.top = String(my2 += 40) + 'px';
   my2 += 40;
 }
 }
 //move aleatoire mob 3
 function mob3Mov(){
 if (rng3 == 1) {
-  // mobcss3.left = String(mx3 -= 40) + 'px';
   mx3 -= 40;
 }
 if (rng3 == 2){
-  // mobcss3.left = String(mx3 += 40) + 'px';
   mx3 += 40;
 }
 if (rng3 == 3){
-  // mobcss3.top = String(my3 -= 40) + 'px';
   my3 -= 40;
 }
 if (rng3 == 4){
-  // mobcss3.top = String(my3 += 40) + 'px';
   my3 += 40;
 }
 }
 //move aleatoire mob 4
 function mob4Mov(){
 if (rng4 == 1) {
-  // mobcss4.left = String(mx4 -= 40) + 'px';
   mx4 -= 40;
 }
 if (rng4 == 2){
-  // mobcss4.left = String(mx4 += 40) + 'px';
   mx4 += 40;
 }
 if (rng4 == 3){
-  // mobcss4.top = String(my4 -= 40) + 'px';
   my4 -= 40;
 }
 if (rng4 == 4){
-  // mobcss4.top = String(my4 += 40) + 'px';
   my4 += 40;
 }
 }
 //move aleatoire mob 5
 function mob5Mov(){
 if (rng5 == 1) {
-  // mobcss5.left = String(mx5 -= 40) + 'px';
   mx5 -= 40;
 }
 if (rng5 == 2){
-  // mobcss5.left = String(mx5 += 40) + 'px';
   mx5 += 40;
 }
 if (rng5 == 3){
-  // mobcss5.top = String(my5 -= 40) + 'px';
   my5 -= 40;
 }
 if (rng5 == 4){
-  // mobcss5.top = String(my5 += 40) + 'px';
   my5 += 40;
 }
 }
