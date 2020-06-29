@@ -79,18 +79,19 @@ function dropDaBomb(x, y) {
       bombegen.setAttribute("class", "bombe");
       plateau.appendChild(bombegen);
       bstyle = bombegen.style;
+      bx = x;
+      by = y;
       bstyle.display = "block";
       bstyle.top = y + "px";
       bstyle.left = x + "px";
       setTimeout(boom, 1000);
-      if (true) {
-
-      }
 
 }
-function boom(x,y) {
+function boom() {
   bstyle.display = "none";
 }
+var colliBombe = document.querySelectorAll(".bombe");
+
 // generationMurs
 for (var i = 0; i < random80() + 20; i++) {
   var divgen = document.createElement("div");
@@ -106,6 +107,7 @@ for (var i = 0; i < random80() + 20; i++) {
   murcss.top = String(v) + 'px';
 }
 var colliMur = document.querySelectorAll(".mur");
+
 
 //move aleatoire mob 1
 function mob1Mov(){
@@ -269,13 +271,13 @@ if (mx5 > 640) mx5 = 640;
   for (var i = 0; i < colliMur.length; i++) {
     if (x == colliMur[i].offsetLeft && y == colliMur[i].offsetTop) {
       if (keyCode == 38) {
-        my5 += 40;
+        y += 40;
       } else if (keyCode == 39) {
-        mx5 -= 40;
+        x -= 40;
       } else if (keyCode == 40) {
-        my5 -= 40;
+        y -= 40;
       } else if (keyCode == 37) {
-        mx5 += 40;
+        x += 40;
       }
         }
       }
@@ -288,7 +290,6 @@ for (var i = 0; i < colliMur.length; i++) {
       mx1 -= 40;
     } else if (rng1 == 4) {
       my1 -= 40;
-      console.log(colliMur[i].offsetLeft,colliMur[i].offsetTop);
     } else if (rng1 == 1) {
       mx1 += 40;
     }
@@ -303,7 +304,6 @@ for (var i = 0; i < colliMur.length; i++) {
       mx2 -= 40;
     } else if (rng2 == 4) {
       my2 -= 40;
-      console.log(colliMur[i].offsetLeft,colliMur[i].offsetTop);
     } else if (rng2 == 1) {
       mx2 += 40;
     }
@@ -318,7 +318,6 @@ for (var i = 0; i < colliMur.length; i++) {
       mx3 -= 40;
     } else if (rng3 == 4) {
       my3 -= 40;
-      console.log(colliMur[i].offsetLeft,colliMur[i].offsetTop);
     } else if (rng3 == 1) {
       mx3 += 40;
     }
@@ -333,7 +332,6 @@ for (var i = 0; i < colliMur.length; i++) {
       mx4 -= 40;
     } else if (rng4 == 4) {
       my4 -= 40;
-      console.log(colliMur[i].offsetLeft,colliMur[i].offsetTop);
     } else if (rng4 == 1) {
       mx4 += 40;
     }
@@ -348,13 +346,25 @@ for (var i = 0; i < colliMur.length; i++) {
       mx5 -= 40;
     } else if (rng5 == 4) {
       my5 -= 40;
-      console.log(colliMur[i].offsetLeft,colliMur[i].offsetTop);
     } else if (rng5 == 1) {
       mx5 += 40;
     }
       }
     }
-
+//collisions bombe joueur
+  for (var i = 0; i < colliBombe.length; i++) {
+    if (x == colliBombe[i].offsetLeft && y == colliBombe[i].offsetTop) {
+      if (keyCode == 38) {
+        y += 40;
+      } else if (keyCode == 39) {
+        x -= 40;
+      } else if (keyCode == 40) {
+        y -= 40;
+      } else if (keyCode == 37) {
+        x += 40;
+      }
+        }
+      }
   stylePion.left = String(x) + 'px';
   stylePion.top = String(y) + 'px';
   mobcss.left = String(mx1) + 'px';
