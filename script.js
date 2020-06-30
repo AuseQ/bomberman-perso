@@ -88,7 +88,7 @@ function dropDaBomb() {
       function boom() {
         belement.removeChild(belement.firstChild);
       }
-      setTimeout(boom, 1000);
+      setTimeout(boom, 3000);
 }
 
 // generationMurs
@@ -367,8 +367,38 @@ var bombePos = document.querySelectorAll(".bombe");
       }
         }
       }
-
-
+//gameover
+for (var i = 0; i < 1; i++) {
+  if (x == mx5 && y == my5 && x == mx4 && y == my4 && x == mx3 && y == my3 && x == mx2 && y == my2 && x == mx1 && y == my1) {
+    alert("PERDU");
+    document.location.reload(true);
+  }
+}
+for (var i = 0; i < 1; i++) {
+  if (x == mx4 && y == my4 ) {
+    alert("PERDU");
+    document.location.reload(true);
+  }
+}
+for (var i = 0; i < 1; i++) {
+  if (x == mx3 && y == my3) {
+    alert("PERDU");
+    document.location.reload(true);
+  }
+}
+for (var i = 0; i < 1; i++) {
+  if (x == mx2 && y == my2) {
+    alert("PERDU");
+    document.location.reload(true);
+  }
+}
+for (var i = 0; i < 1; i++) {
+  if (x == mx1 && y == my1) {
+    alert("PERDU");
+    document.location.reload(true);
+  }
+}
+console.log(bombePos,colliMur);
   stylePion.left = String(x) + 'px';
   stylePion.top = String(y) + 'px';
   mobcss.left = String(mx1) + 'px';
