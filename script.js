@@ -1,8 +1,11 @@
+
 var plateau = document.getElementById("plateau");
 var pion = document.getElementById('pion'),
   stylePion = pion.style,
   x = pion.offsetLeft,
   y = pion.offsetTop;
+var bx = pion.offsetLeft,
+    by = pion.offsetTop;
 function random80() {
   return Math.floor(Math.random() * 80);
 }
@@ -18,9 +21,7 @@ function random3(){
   rng3 = Math.floor(Math.random() * 4+1);
   rng4 = Math.floor(Math.random() * 4+1);
   rng5 = Math.floor(Math.random() * 4+1);
-
 }
-
 //mob1
 var mobgen = document.createElement("div");
     mobgen.setAttribute("class", "mob1");
@@ -74,23 +75,21 @@ var mobcss5 = mobgen5.style;
     mobcss5.top = String(my5) + 'px';
 
 // en travaux
-function dropDaBomb(x, y) {
+function dropDaBomb() {
   var bombegen = document.createElement("div");
       bombegen.setAttribute("class", "bombe");
-      plateau.appendChild(bombegen);
-      bstyle = bombegen.style;
-      bx = x;
-      by = y;
-      bstyle.display = "block";
-      bstyle.top = y + "px";
-      bstyle.left = x + "px";
+  var belement = document.getElementById("bombes");
+      belement.appendChild(bombegen);
+  var bstyle = bombegen.style,
+      bx = pion.offsetLeft,
+      by = pion.offsetTop;
+      bstyle.top = String(by) + "px";
+      bstyle.left = String(bx) + "px";
+      function boom() {
+        belement.removeChild(belement.firstChild);
+      }
       setTimeout(boom, 1000);
-
 }
-function boom() {
-  bstyle.display = "none";
-}
-var colliBombe = document.querySelectorAll(".bombe");
 
 // generationMurs
 for (var i = 0; i < random80() + 20; i++) {
@@ -225,13 +224,15 @@ document.onkeydown = function(event) {
       mob5Mov();
       break;
     case 32:
-      dropDaBomb(x , y);
+      dropDaBomb();
       random3();
       mob1Mov();
       mob2Mov();
       mob3Mov();
       mob4Mov();
       mob5Mov();
+      bx = x,
+      by = y;
       break;
     default:
       return;
@@ -351,9 +352,10 @@ for (var i = 0; i < colliMur.length; i++) {
     }
       }
     }
-//collisions bombe joueur
-  for (var i = 0; i < colliBombe.length; i++) {
-    if (x == colliBombe[i].offsetLeft && y == colliBombe[i].offsetTop) {
+var bombePos = document.querySelectorAll(".bombe");
+// collisions bombe joueur
+  for (var i = 0; i < bombePos.length ; i++) {
+    if (x == bombePos[i].offsetLeft && y == bombePos[i].offsetTop) {
       if (keyCode == 38) {
         y += 40;
       } else if (keyCode == 39) {
@@ -365,6 +367,8 @@ for (var i = 0; i < colliMur.length; i++) {
       }
         }
       }
+
+
   stylePion.left = String(x) + 'px';
   stylePion.top = String(y) + 'px';
   mobcss.left = String(mx1) + 'px';
@@ -377,4 +381,5 @@ for (var i = 0; i < colliMur.length; i++) {
   mobcss4.top = String(my4) + 'px';
   mobcss5.left = String(mx5) + 'px';
   mobcss5.top = String(my5) + 'px';
+
 }
