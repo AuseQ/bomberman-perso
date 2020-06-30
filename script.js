@@ -369,7 +369,7 @@ var bombePos = document.querySelectorAll(".bombe");
       }
 //gameover
 for (var i = 0; i < 1; i++) {
-  if (x == mx5 && y == my5 && x == mx4 && y == my4 && x == mx3 && y == my3 && x == mx2 && y == my2 && x == mx1 && y == my1) {
+  if (x == mx5 && y == my5) {
     alert("PERDU");
     document.location.reload(true);
   }
