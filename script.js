@@ -368,62 +368,62 @@ for (var i = 0; i < bombePos.length; i++) {
     }
       }
     }
-    //collisions mob2 joueur
-    for (var i = 0; i < bombePos.length; i++) {
-      if (mx2 == bombePos[i].offsetLeft && my2 == bombePos[i].offsetTop) {
-        if (rng2 == 3) {
-          my2 += 40;
-        } else if (rng2 == 2) {
-          mx2 -= 40;
-        } else if (rng2 == 4) {
-          my2 -= 40;
-        } else if (rng2 == 1) {
-          mx2 += 40;
-        }
-          }
-        }
-        //collisions mob3 joueur
-        for (var i = 0; i < bombePos.length; i++) {
-          if (mx3 == bombePos[i].offsetLeft && my3 == bombePos[i].offsetTop) {
-            if (rng3 == 3) {
-              my3 += 40;
-            } else if (rng2 == 2) {
-              mx3 -= 40;
-            } else if (rng2 == 4) {
-              my3 -= 40;
-            } else if (rng2 == 1) {
-              mx3 += 40;
-            }
-              }
-            }
-            //collisions mob4 joueur
-            for (var i = 0; i < bombePos.length; i++) {
-              if (mx4 == bombePos[i].offsetLeft && my4 == bombePos[i].offsetTop) {
-                if (rng4 == 3) {
-                  my4 += 40;
-                } else if (rng2 == 2) {
-                  mx4 -= 40;
-                } else if (rng2 == 4) {
-                  my4 -= 40;
-                } else if (rng2 == 1) {
-                  mx4 += 40;
-                }
-                  }
-                }
-                //collisions mob5 joueur
-                for (var i = 0; i < bombePos.length; i++) {
-                  if (mx5 == bombePos[i].offsetLeft && my5 == bombePos[i].offsetTop) {
-                    if (rng5 == 3) {
-                      my5 += 40;
-                    } else if (rng2 == 2) {
-                      mx5 -= 40;
-                    } else if (rng2 == 4) {
-                      my5 -= 40;
-                    } else if (rng2 == 1) {
-                      mx5 += 40;
-                    }
-                      }
-                    }
+//collisions mob2 joueur
+for (var i = 0; i < bombePos.length; i++) {
+  if (mx2 == bombePos[i].offsetLeft && my2 == bombePos[i].offsetTop) {
+    if (rng2 == 3) {
+      my2 += 40;
+    } else if (rng2 == 2) {
+      mx2 -= 40;
+    } else if (rng2 == 4) {
+      my2 -= 40;
+    } else if (rng2 == 1) {
+      mx2 += 40;
+    }
+      }
+    }
+//collisions mob3 joueur
+for (var i = 0; i < bombePos.length; i++) {
+  if (mx3 == bombePos[i].offsetLeft && my3 == bombePos[i].offsetTop) {
+    if (rng3 == 3) {
+      my3 += 40;
+    } else if (rng2 == 2) {
+      mx3 -= 40;
+    } else if (rng2 == 4) {
+      my3 -= 40;
+    } else if (rng2 == 1) {
+      mx3 += 40;
+    }
+      }
+    }
+//collisions mob4 joueur
+for (var i = 0; i < bombePos.length; i++) {
+  if (mx4 == bombePos[i].offsetLeft && my4 == bombePos[i].offsetTop) {
+    if (rng4 == 3) {
+      my4 += 40;
+    } else if (rng2 == 2) {
+      mx4 -= 40;
+    } else if (rng2 == 4) {
+      my4 -= 40;
+    } else if (rng2 == 1) {
+      mx4 += 40;
+    }
+      }
+    }
+//collisions mob5 joueur
+for (var i = 0; i < bombePos.length; i++) {
+  if (mx5 == bombePos[i].offsetLeft && my5 == bombePos[i].offsetTop) {
+    if (rng5 == 3) {
+      my5 += 40;
+    } else if (rng2 == 2) {
+      mx5 -= 40;
+    } else if (rng2 == 4) {
+      my5 -= 40;
+    } else if (rng2 == 1) {
+      mx5 += 40;
+    }
+      }
+    }
 // collisions bombe joueur
   for (var i = 0; i < bombePos.length ; i++) {
     if (x == bombePos[i].offsetLeft && y == bombePos[i].offsetTop) {
@@ -438,6 +438,8 @@ for (var i = 0; i < bombePos.length; i++) {
       }
         }
       }
+//explomur
+
 //gameover
 for (var i = 0; i < 1; i++) {
   if (x == mx5 && y == my5) {
@@ -482,5 +484,4 @@ console.log(bombePos,colliMur);
   mobcss4.top = String(my4) + 'px';
   mobcss5.left = String(mx5) + 'px';
   mobcss5.top = String(my5) + 'px';
-
 }
