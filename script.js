@@ -9,6 +9,13 @@ var bx = pion.offsetLeft,
 function random80() {
   return Math.floor(Math.random() * 80);
 }
+// var victoire = 0;
+// function victory(){
+//   if (victoire > 4) {
+//     alert("BRAVO");
+//     document.location.reload(true);
+//   }
+// }
 //RNG
 var rng1;
 var rng2;
@@ -74,23 +81,6 @@ var mobcss5 = mobgen5.style;
     mobcss5.left = String(mx5) + 'px';
     mobcss5.top = String(my5) + 'px';
 
-// en travaux
-function dropDaBomb() {
-  var bombegen = document.createElement("div");
-      bombegen.setAttribute("class", "bombe");
-  var belement = document.getElementById("bombes");
-      belement.appendChild(bombegen);
-  var bstyle = bombegen.style,
-      bx = pion.offsetLeft,
-      by = pion.offsetTop;
-      bstyle.top = String(by) + "px";
-      bstyle.left = String(bx) + "px";
-      function boom() {
-        belement.removeChild(belement.firstChild);
-      }
-      setTimeout(boom, 3000);
-}
-
 // generationMurs
 for (var i = 0; i < random80() + 20; i++) {
   var divgen = document.createElement("div");
@@ -106,7 +96,171 @@ for (var i = 0; i < random80() + 20; i++) {
   murcss.top = String(v) + 'px';
 }
 var colliMur = document.querySelectorAll(".mur");
+// en travaux
+function dropDaBomb() {
+  var bombegen = document.createElement("div");
+      bombegen.setAttribute("class", "bombe");
+  var belement = document.getElementById("bombes");
+      belement.appendChild(bombegen);
+  var bstyle = bombegen.style,
+      bx = pion.offsetLeft,
+      by = pion.offsetTop;
+      bstyle.top = String(by) + "px";
+      bstyle.left = String(bx) + "px";
+      function boom() {
+        for (var i = 0; i < colliMur.length; i++) {
+          var h = colliMur[i].offsetLeft,
+              v = colliMur[i].offsetTop;
 
+      if (parseInt(bstyle.left) == colliMur[i].offsetLeft && parseInt(bstyle.top) - 40 == colliMur[i].offsetTop) {
+        colliMur[i].remove();
+      }
+      if (parseInt(bstyle.left) - 40 == colliMur[i].offsetLeft && parseInt(bstyle.top) == colliMur[i].offsetTop) {
+        colliMur[i].remove();
+      }
+      if (parseInt(bstyle.left) + 40 == colliMur[i].offsetLeft && parseInt(bstyle.top) == colliMur[i].offsetTop) {
+        colliMur[i].remove();
+      }
+      if (parseInt(bstyle.left) == colliMur[i].offsetLeft && parseInt(bstyle.top) + 40 == colliMur[i].offsetTop) {
+        colliMur[i].remove();
+      }
+      // if (parseInt(bstyle.left) == x && parseInt(bstyle.top) - 40 == y) {
+      //   alert("PERDU");
+      //   document.location.reload(true);
+      //   }
+      //   if (parseInt(bstyle.left) - 40 == x && parseInt(bstyle.top) == y) {
+      //     alert("PERDU");
+      //     document.location.reload(true);
+      //   }
+      //   if (parseInt(bstyle.left) + 40 == x && parseInt(bstyle.top) == y) {
+      //     alert("PERDU");
+      //     document.location.reload(true);
+      //   }
+      //   if (parseInt(bstyle.left) == x && parseInt(bstyle.top) + 40 == y) {
+      //     alert("PERDU");
+      //     document.location.reload(true);
+      //   }
+      //   if (parseInt(bstyle.left) == x && parseInt(bstyle.top) == y) {
+      //     alert("PERDU");
+      //     document.location.reload(true);
+      //   }
+        if (parseInt(bstyle.left) == mx1 && parseInt(bstyle.top) - 40 == my1) {
+          mobgen.remove();
+          delete mobgen.style;
+
+
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) - 40 == mx1 && parseInt(bstyle.top) == my1) {
+          mobgen.remove();
+          delete mobgen.style;
+
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) + 40 == mx1 && parseInt(bstyle.top) == my1) {
+          mobgen.remove();
+          delete mobgen.style;
+
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) == mx1 && parseInt(bstyle.top) + 40 == my1) {
+          mobgen.remove();
+          delete mobgen.style;
+
+
+          // victoire +=1
+        }
+
+        if (parseInt(bstyle.left) == mx2 && parseInt(bstyle.top) - 40 == my2) {
+
+          mobgen2.remove();
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) - 40 == mx2 && parseInt(bstyle.top) == my2) {
+          mobgen2.remove();
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) + 40 == mx2 && parseInt(bstyle.top) == my2) {
+          mobgen2.remove();
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) == mx2 && parseInt(bstyle.top) + 40 == my2) {
+          mobgen2.remove();
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) == mx3 && parseInt(bstyle.top) - 40 == my3) {
+          mobgen3.remove();
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) - 40 == mx3 && parseInt(bstyle.top) == my3) {
+          mobgen3.remove();
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) + 40 == mx3 && parseInt(bstyle.top) == my3) {
+          mobgen3.remove();
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) == mx3 && parseInt(bstyle.top) + 40 == my3) {
+          mobgen3.remove();
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) == mx4 && parseInt(bstyle.top) - 40 == my4) {
+          mobgen4.remove();
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) - 40 == mx4 && parseInt(bstyle.top) == my4) {
+          mobgen4.remove();
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) + 40 == mx4 && parseInt(bstyle.top) == my4) {
+          mobgen4.remove();
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) == mx4 && parseInt(bstyle.top) + 40 == my4) {
+          mobgen4.remove();
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) == mx5 && parseInt(bstyle.top) - 40 == my5) {
+          mobgen5.remove();
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) - 40 == mx5 && parseInt(bstyle.top) == my5) {
+          mobgen5.remove();
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) + 40 == mx5 && parseInt(bstyle.top) == my5) {
+          mobgen5.remove();
+
+          // victoire +=1
+        }
+        if (parseInt(bstyle.left) == mx5 && parseInt(bstyle.top) + 40 == my5) {
+          mobgen5.remove();
+
+          // victoire +=1
+        }
+    }
+
+      belement.removeChild(belement.firstChild);
+    }
+      setTimeout(boom, 3000);
+}
 
 //move aleatoire mob 1
 function mob1Mov(){
@@ -354,7 +508,7 @@ for (var i = 0; i < colliMur.length; i++) {
     }
 //collision mobs<bombes>joueur
 var bombePos = document.querySelectorAll(".bombe");
-//collisions mob1 joueur
+//collisions mob1 bombe
 for (var i = 0; i < bombePos.length; i++) {
   if (mx1 == bombePos[i].offsetLeft && my1 == bombePos[i].offsetTop) {
     if (rng1 == 3) {
@@ -368,7 +522,7 @@ for (var i = 0; i < bombePos.length; i++) {
     }
       }
     }
-//collisions mob2 joueur
+//collisions mob2 bombe
 for (var i = 0; i < bombePos.length; i++) {
   if (mx2 == bombePos[i].offsetLeft && my2 == bombePos[i].offsetTop) {
     if (rng2 == 3) {
@@ -382,7 +536,7 @@ for (var i = 0; i < bombePos.length; i++) {
     }
       }
     }
-//collisions mob3 joueur
+//collisions mob3 bombe
 for (var i = 0; i < bombePos.length; i++) {
   if (mx3 == bombePos[i].offsetLeft && my3 == bombePos[i].offsetTop) {
     if (rng3 == 3) {
@@ -396,7 +550,7 @@ for (var i = 0; i < bombePos.length; i++) {
     }
       }
     }
-//collisions mob4 joueur
+//collisions mob4 bombe
 for (var i = 0; i < bombePos.length; i++) {
   if (mx4 == bombePos[i].offsetLeft && my4 == bombePos[i].offsetTop) {
     if (rng4 == 3) {
@@ -410,7 +564,7 @@ for (var i = 0; i < bombePos.length; i++) {
     }
       }
     }
-//collisions mob5 joueur
+//collisions mob5 bombe
 for (var i = 0; i < bombePos.length; i++) {
   if (mx5 == bombePos[i].offsetLeft && my5 == bombePos[i].offsetTop) {
     if (rng5 == 3) {
@@ -438,40 +592,110 @@ for (var i = 0; i < bombePos.length; i++) {
       }
         }
       }
-//explomur
 
 //gameover
-for (var i = 0; i < 1; i++) {
+
   if (x == mx5 && y == my5) {
     alert("PERDU");
     document.location.reload(true);
   }
-}
-for (var i = 0; i < 1; i++) {
   if (x == mx4 && y == my4 ) {
     alert("PERDU");
     document.location.reload(true);
   }
-}
-for (var i = 0; i < 1; i++) {
   if (x == mx3 && y == my3) {
     alert("PERDU");
     document.location.reload(true);
   }
-}
-for (var i = 0; i < 1; i++) {
   if (x == mx2 && y == my2) {
     alert("PERDU");
     document.location.reload(true);
   }
-}
-for (var i = 0; i < 1; i++) {
   if (x == mx1 && y == my1) {
     alert("PERDU");
     document.location.reload(true);
   }
-}
-console.log(bombePos,colliMur);
+console.log(mx1,my1);
+//gameovercollisionmob1
+
+    if (keyCode == 38 && x == mx1 && y == my1 ) {
+       alert("PERDU");
+       document.location.reload(true);
+    } else if (keyCode == 39 && x == mx1  && y == my1) {
+       alert("PERDU");
+       document.location.reload(true);
+    } else if (keyCode == 40 && x == mx1 && y == my1 ) {
+       alert("PERDU");
+       document.location.reload(true);
+    } else if (keyCode == 37 && x == mx1  && y == my1) {
+       alert("PERDU");
+       document.location.reload(true);
+    }
+
+      //gameovercollisionmob2
+
+          if (keyCode == 38 && x == mx2 && y == my2 ) {
+             alert("PERDU");
+             document.location.reload(true);
+          } else if (keyCode == 39 && x == mx2  && y == my2) {
+             alert("PERDU");
+             document.location.reload(true);
+          } else if (keyCode == 40 && x == mx2 && y == my2 ) {
+             alert("PERDU");
+             document.location.reload(true);
+          } else if (keyCode == 37 && x == mx2  && y == my2) {
+             alert("PERDU");
+             document.location.reload(true);
+          }
+
+            //gameovercollisionmob3
+
+                if (keyCode == 38 && x == mx3 && y == my3 ) {
+                   alert("PERDU");
+                   document.location.reload(true);
+                } else if (keyCode == 39 && x == mx3  && y == my3) {
+                   alert("PERDU");
+                   document.location.reload(true);
+                } else if (keyCode == 40 && x == mx3 && y == my3 ) {
+                   alert("PERDU");
+                   document.location.reload(true);
+                } else if (keyCode == 37 && x == mx3  && y == my3) {
+                   alert("PERDU");
+                   document.location.reload(true);
+                }
+
+                  //gameovercollisionmob4
+
+                      if (keyCode == 38 && x == mx4 && y == my4 ) {
+                         alert("PERDU");
+                         document.location.reload(true);
+                      } else if (keyCode == 39 && x == mx4  && y == my4) {
+                         alert("PERDU");
+                         document.location.reload(true);
+                      } else if (keyCode == 40 && x == mx4 && y == my4 ) {
+                         alert("PERDU");
+                         document.location.reload(true);
+                      } else if (keyCode == 37 && x == mx4  && y == my4) {
+                         alert("PERDU");
+                         document.location.reload(true);
+                      }
+
+                        //gameovercollisionmob5
+
+                            if (keyCode == 38 && x == mx5 && y == my5 ) {
+                               alert("PERDU");
+                               document.location.reload(true);
+                            } else if (keyCode == 39 && x == mx5  && y == my5) {
+                               alert("PERDU");
+                               document.location.reload(true);
+                            } else if (keyCode == 40 && x == mx5 && y == my5 ) {
+                               alert("PERDU");
+                               document.location.reload(true);
+                            } else if (keyCode == 37 && x == mx5  && y == my5) {
+                               alert("PERDU");
+                               document.location.reload(true);
+                            }
+
   stylePion.left = String(x) + 'px';
   stylePion.top = String(y) + 'px';
   mobcss.left = String(mx1) + 'px';
