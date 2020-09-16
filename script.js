@@ -602,31 +602,31 @@ for (var i = 0; i < bombePos.length; i++) {
 //gameover
 
 
-if (isDead5 !== null) {
+if (isDead5.length === 1) {
   if (x == mx5 && y == my5) {
     alert("PERDU");
     document.location.reload(true);
   }
 }
-if (isDead4 !== null) {
+if (isDead4.length === 1) {
   if (x == mx4 && y == my4 ) {
     alert("PERDU");
     document.location.reload(true);
   }
 }
-if (isDead3 !== null) {
+if (isDead3.length === 1) {
   if (x == mx3 && y == my3) {
     alert("PERDU");
     document.location.reload(true);
   }
 }
-if (isDead2 !== null) {
+if (isDead2.length === 1) {
   if (x == mx2 && y == my2) {
     alert("PERDU");
     document.location.reload(true);
   }
 }
-if (isDead1 !== null) {
+if (isDead1.length === 1) {
   if (x == mx1 && y == my1) {
     alert("PERDU");
     document.location.reload(true);
@@ -634,7 +634,7 @@ if (isDead1 !== null) {
 }
 
 //gameovercollisionmob1
-if (isDead1 !== null) {
+if (isDead1.length === 1) {
     if (keyCode == 38 && x == mx1 && y == my1 ) {
        alert("PERDU");
        document.location.reload(true);
@@ -651,7 +651,7 @@ if (isDead1 !== null) {
   }
 
       //gameovercollisionmob2
-        if (isDead2 !== null) {
+        if (isDead2.length === 1) {
           if (keyCode == 38 && x == mx2 && y == my2 ) {
              alert("PERDU");
              document.location.reload(true);
@@ -668,7 +668,7 @@ if (isDead1 !== null) {
         }
 
             //gameovercollisionmob3
-              if (isDead3 !== null) {
+              if (isDead3.length === 1) {
                 if (keyCode == 38 && x == mx3 && y == my3 ) {
                    alert("PERDU");
                    document.location.reload(true);
@@ -685,7 +685,7 @@ if (isDead1 !== null) {
               }
 
                   //gameovercollisionmob4
-                    if (isDead4 !== null) {
+                    if (isDead4.length === 1) {
                       if (keyCode == 38 && x == mx4 && y == my4 ) {
                          alert("PERDU");
                          document.location.reload(true);
@@ -702,7 +702,7 @@ if (isDead1 !== null) {
                     }
 
                         //gameovercollisionmob5
-                          if (isDead5 !== null) {
+                          if (isDead5.length === 1) {
                             if (keyCode == 38 && x == mx5 && y == my5 ) {
                                alert("PERDU");
                                document.location.reload(true);
