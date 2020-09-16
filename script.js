@@ -9,13 +9,8 @@ var bx = pion.offsetLeft,
 function random80() {
   return Math.floor(Math.random() * 80);
 }
-// var victoire = 0;
-// function victory(){
-//   if (victoire > 4) {
-//     alert("BRAVO");
-//     document.location.reload(true);
-//   }
-// }
+var victoire = 0;
+
 //RNG
 var isDead1 = document.getElementsByClassName('mob1');
 var isDead2 = document.getElementsByClassName('mob2');
@@ -151,14 +146,14 @@ function dropDaBomb() {
         if (parseInt(bstyle.left) == mx1 && parseInt(bstyle.top) - 40 == my1) {
           mobgen.remove();
 
-          // victoire +=1
+
         }
         if (parseInt(bstyle.left) - 40 == mx1 && parseInt(bstyle.top) == my1) {
           mobgen.remove();
 
 
 
-          // victoire +=1
+
         }
         if (parseInt(bstyle.left) + 40 == mx1 && parseInt(bstyle.top) == my1) {
           mobgen.remove();
@@ -167,7 +162,7 @@ function dropDaBomb() {
 
 
 
-          // victoire +=1
+
         }
         if (parseInt(bstyle.left) == mx1 && parseInt(bstyle.top) + 40 == my1) {
           mobgen.remove();
@@ -177,89 +172,89 @@ function dropDaBomb() {
 
 
 
-          // victoire +=1
+
         }
 
         if (parseInt(bstyle.left) == mx2 && parseInt(bstyle.top) - 40 == my2) {
 
           mobgen2.remove();
 
-          // victoire +=1
+           ;
         }
         if (parseInt(bstyle.left) - 40 == mx2 && parseInt(bstyle.top) == my2) {
           mobgen2.remove();
 
-          // victoire +=1
+           ;
         }
         if (parseInt(bstyle.left) + 40 == mx2 && parseInt(bstyle.top) == my2) {
           mobgen2.remove();
 
-          // victoire +=1
+           ;
         }
         if (parseInt(bstyle.left) == mx2 && parseInt(bstyle.top) + 40 == my2) {
           mobgen2.remove();
 
-          // victoire +=1
+           ;
         }
         if (parseInt(bstyle.left) == mx3 && parseInt(bstyle.top) - 40 == my3) {
           mobgen3.remove();
 
-          // victoire +=1
+           ;
         }
         if (parseInt(bstyle.left) - 40 == mx3 && parseInt(bstyle.top) == my3) {
           mobgen3.remove();
 
-          // victoire +=1
+           ;
         }
         if (parseInt(bstyle.left) + 40 == mx3 && parseInt(bstyle.top) == my3) {
           mobgen3.remove();
 
-          // victoire +=1
+           ;
         }
         if (parseInt(bstyle.left) == mx3 && parseInt(bstyle.top) + 40 == my3) {
           mobgen3.remove();
 
-          // victoire +=1
+           ;
         }
         if (parseInt(bstyle.left) == mx4 && parseInt(bstyle.top) - 40 == my4) {
           mobgen4.remove();
 
-          // victoire +=1
+           ;
         }
         if (parseInt(bstyle.left) - 40 == mx4 && parseInt(bstyle.top) == my4) {
           mobgen4.remove();
 
-          // victoire +=1
+           ;
         }
         if (parseInt(bstyle.left) + 40 == mx4 && parseInt(bstyle.top) == my4) {
           mobgen4.remove();
 
-          // victoire +=1
+           ;
         }
         if (parseInt(bstyle.left) == mx4 && parseInt(bstyle.top) + 40 == my4) {
           mobgen4.remove();
 
-          // victoire +=1
+           ;
         }
         if (parseInt(bstyle.left) == mx5 && parseInt(bstyle.top) - 40 == my5) {
           mobgen5.remove();
 
-          // victoire +=1
+           ;
         }
         if (parseInt(bstyle.left) - 40 == mx5 && parseInt(bstyle.top) == my5) {
           mobgen5.remove();
 
-          // victoire +=1
+           ;
         }
         if (parseInt(bstyle.left) + 40 == mx5 && parseInt(bstyle.top) == my5) {
           mobgen5.remove();
 
-          // victoire +=1
+           ;
         }
         if (parseInt(bstyle.left) == mx5 && parseInt(bstyle.top) + 40 == my5) {
           mobgen5.remove();
 
-          // victoire +=1
+           ;
         }
     }
 
@@ -717,6 +712,12 @@ if (isDead1.length === 1) {
                                document.location.reload(true);
                             }
                           }
+if (isDead1.length == 0 && isDead2.length == 0 && isDead3.length == 0 && isDead4.length == 0 && isDead5.length == 0) {
+  alert("BRAVO");
+  document.location.reload(true);
+}
+
+
   stylePion.left = String(x) + 'px';
   stylePion.top = String(y) + 'px';
   mobcss.left = String(mx1) + 'px';
