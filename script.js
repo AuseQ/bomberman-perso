@@ -17,20 +17,19 @@ function random80() {
 //   }
 // }
 //RNG
+var isDead1 = document.getElementsByClassName('mob1');
+var isDead2 = document.getElementsByClassName('mob2');
+var isDead3 = document.getElementsByClassName('mob3');
+var isDead4 = document.getElementsByClassName('mob4');
+var isDead5 = document.getElementsByClassName('mob5');
+var inoffensif;
 var rng1;
 var rng2;
 var rng3;
 var rng4;
 var rng5;
-function random1(){
-  if (rng1 == null) {
-    rng1 = 0;
-  } else {
-    rng1 = Math.floor(Math.random() * 4+1);
-  } {
-
-  }
-
+function random3(){
+  rng1 = Math.floor(Math.random() * 4+1);
   rng2 = Math.floor(Math.random() * 4+1);
   rng3 = Math.floor(Math.random() * 4+1);
   rng4 = Math.floor(Math.random() * 4+1);
@@ -129,38 +128,33 @@ function dropDaBomb() {
       if (parseInt(bstyle.left) == colliMur[i].offsetLeft && parseInt(bstyle.top) + 40 == colliMur[i].offsetTop) {
         colliMur[i].remove();
       }
-      // if (parseInt(bstyle.left) == x && parseInt(bstyle.top) - 40 == y) {
-      //   alert("PERDU");
-      //   document.location.reload(true);
-      //   }
-      //   if (parseInt(bstyle.left) - 40 == x && parseInt(bstyle.top) == y) {
-      //     alert("PERDU");
-      //     document.location.reload(true);
-      //   }
-      //   if (parseInt(bstyle.left) + 40 == x && parseInt(bstyle.top) == y) {
-      //     alert("PERDU");
-      //     document.location.reload(true);
-      //   }
-      //   if (parseInt(bstyle.left) == x && parseInt(bstyle.top) + 40 == y) {
-      //     alert("PERDU");
-      //     document.location.reload(true);
-      //   }
-      //   if (parseInt(bstyle.left) == x && parseInt(bstyle.top) == y) {
-      //     alert("PERDU");
-      //     document.location.reload(true);
-      //   }
+      if (parseInt(bstyle.left) == x && parseInt(bstyle.top) - 40 == y) {
+        alert("PERDU");
+        document.location.reload(true);
+        }
+        if (parseInt(bstyle.left) - 40 == x && parseInt(bstyle.top) == y) {
+          alert("PERDU");
+          document.location.reload(true);
+        }
+        if (parseInt(bstyle.left) + 40 == x && parseInt(bstyle.top) == y) {
+          alert("PERDU");
+          document.location.reload(true);
+        }
+        if (parseInt(bstyle.left) == x && parseInt(bstyle.top) + 40 == y) {
+          alert("PERDU");
+          document.location.reload(true);
+        }
+        if (parseInt(bstyle.left) == x && parseInt(bstyle.top) == y) {
+          alert("PERDU");
+          document.location.reload(true);
+        }
         if (parseInt(bstyle.left) == mx1 && parseInt(bstyle.top) - 40 == my1) {
           mobgen.remove();
-          mobgen.style.removeProperty("left");
-          mobgen.style.removeProperty("top");
-
 
           // victoire +=1
         }
         if (parseInt(bstyle.left) - 40 == mx1 && parseInt(bstyle.top) == my1) {
           mobgen.remove();
-          mobgen.style.removeProperty("left");
-          mobgen.style.removeProperty("top");
 
 
 
@@ -168,9 +162,7 @@ function dropDaBomb() {
         }
         if (parseInt(bstyle.left) + 40 == mx1 && parseInt(bstyle.top) == my1) {
           mobgen.remove();
-          mobgen.style.removeProperty("left");
-          mobgen.style.removeProperty("top");
-          rng1 == 0;
+
 
 
 
@@ -179,8 +171,7 @@ function dropDaBomb() {
         }
         if (parseInt(bstyle.left) == mx1 && parseInt(bstyle.top) + 40 == my1) {
           mobgen.remove();
-          mobgen.style.removeProperty("left");
-          mobgen.style.removeProperty("top");
+
 
 
 
@@ -358,7 +349,7 @@ document.onkeydown = function(event) {
   switch (keyCode) {
     case 38:
       y -= 40;
-      random1();
+      random3();
       mob1Mov();
       mob2Mov();
       mob3Mov();
@@ -367,7 +358,7 @@ document.onkeydown = function(event) {
       break;
     case 39:
       x += 40;
-      random1();
+      random3();
       mob1Mov();
       mob2Mov();
       mob3Mov();
@@ -376,7 +367,7 @@ document.onkeydown = function(event) {
       break;
     case 40:
       y += 40;
-      random1();
+      random3();
       mob1Mov();
       mob2Mov();
       mob3Mov();
@@ -385,7 +376,7 @@ document.onkeydown = function(event) {
       break;
     case 37:
       x -= 40;
-      random1();
+      random3();
       mob1Mov();
       mob2Mov();
       mob3Mov();
@@ -394,14 +385,14 @@ document.onkeydown = function(event) {
       break;
     case 32:
       dropDaBomb();
-      random1();
+      random3();
       mob1Mov();
       mob2Mov();
       mob3Mov();
       mob4Mov();
       mob5Mov();
-      bx = x,
-      by = y;
+      // bx = x,
+      // by = y;
       break;
     default:
       return;
@@ -610,29 +601,40 @@ for (var i = 0; i < bombePos.length; i++) {
 
 //gameover
 
+
+if (isDead5 !== null) {
   if (x == mx5 && y == my5) {
     alert("PERDU");
     document.location.reload(true);
   }
+}
+if (isDead4 !== null) {
   if (x == mx4 && y == my4 ) {
     alert("PERDU");
     document.location.reload(true);
   }
+}
+if (isDead3 !== null) {
   if (x == mx3 && y == my3) {
     alert("PERDU");
     document.location.reload(true);
   }
+}
+if (isDead2 !== null) {
   if (x == mx2 && y == my2) {
     alert("PERDU");
     document.location.reload(true);
   }
+}
+if (isDead1 !== null) {
   if (x == mx1 && y == my1) {
     alert("PERDU");
     document.location.reload(true);
   }
-console.log(rng1);
-//gameovercollisionmob1
+}
 
+//gameovercollisionmob1
+if (isDead1 !== null) {
     if (keyCode == 38 && x == mx1 && y == my1 ) {
        alert("PERDU");
        document.location.reload(true);
@@ -646,9 +648,10 @@ console.log(rng1);
        alert("PERDU");
        document.location.reload(true);
     }
+  }
 
       //gameovercollisionmob2
-
+        if (isDead2 !== null) {
           if (keyCode == 38 && x == mx2 && y == my2 ) {
              alert("PERDU");
              document.location.reload(true);
@@ -662,9 +665,10 @@ console.log(rng1);
              alert("PERDU");
              document.location.reload(true);
           }
+        }
 
             //gameovercollisionmob3
-
+              if (isDead3 !== null) {
                 if (keyCode == 38 && x == mx3 && y == my3 ) {
                    alert("PERDU");
                    document.location.reload(true);
@@ -678,9 +682,10 @@ console.log(rng1);
                    alert("PERDU");
                    document.location.reload(true);
                 }
+              }
 
                   //gameovercollisionmob4
-
+                    if (isDead4 !== null) {
                       if (keyCode == 38 && x == mx4 && y == my4 ) {
                          alert("PERDU");
                          document.location.reload(true);
@@ -694,9 +699,10 @@ console.log(rng1);
                          alert("PERDU");
                          document.location.reload(true);
                       }
+                    }
 
                         //gameovercollisionmob5
-
+                          if (isDead5 !== null) {
                             if (keyCode == 38 && x == mx5 && y == my5 ) {
                                alert("PERDU");
                                document.location.reload(true);
@@ -710,7 +716,7 @@ console.log(rng1);
                                alert("PERDU");
                                document.location.reload(true);
                             }
-
+                          }
   stylePion.left = String(x) + 'px';
   stylePion.top = String(y) + 'px';
   mobcss.left = String(mx1) + 'px';
